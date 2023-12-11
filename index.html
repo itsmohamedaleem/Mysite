@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon - AH</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #ffd700; /* Gold color */
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+
+    .countdown {
+      font-size: 1.5em;
+    }
+
+    .logo {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">AH</div>
+    <h1>Coming Soon</h1>
+    <p>We're working on something awesome and exciting.<br>Stay tuned for updates!</p>
+    <div class="countdown">Countdown Timer: <span id="countdown">10:00:00</span></div>
+  </div>
+
+  <script>
+    // You can add your own countdown logic here using JavaScript
+    // For simplicity, a placeholder timer is displayed in the example
+    function startCountdown(duration) {
+      var timer = duration, hours, minutes, seconds;
+      setInterval(function () {
+        hours = parseInt(timer / 3600, 10);
+        minutes = parseInt((timer % 3600) / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        document.getElementById("countdown").textContent = hours + ":" + minutes + ":" + seconds;
+
+        if (--timer < 0) {
+          timer = duration;
+        }
+      }, 1000);
+    }
+
+    // Start countdown with a duration of 10 hours (adjust as needed)
+    startCountdown(36000);
+  </script>
+
+</body>
+</html>
